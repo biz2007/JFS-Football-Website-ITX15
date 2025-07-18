@@ -1,0 +1,26 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar customization */
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Footer customization */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.vjc-icon {
+    background-image: url('../images/vjcicon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
