@@ -4,46 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
     <style>
         body {
-            text-align: center;
             font-family: 'Arial', sans-serif;
         }
+
         a {
-            color: black;
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <h2>About Us!</h2>
-    <hr>
-    </hr>
-    <h3>Our Mission</h3>
-    <p>
-        The Victoria Junior College (VJC) Football team is built on passion, perseverance and teamwork!<br>
-        Representing the school in both friendly matches and national competitions, we aim to cultivate a culture of mutual respect, hard work and sportsmanship.<br>
-        We strive to nurture skilled, disciplined and resilient footballers who not only excel in the game but also grow
-        as leaders and team players.
-    </p>
-    <h3>Our Journey</h3>
-    <p>
-        The VJC Football team has a history of competitive success, with many notable performances in various championships.<br>
-        Over the years, our teams have consistently reached the finals and obtained multiple championship titles, showcasing our relentless pursuit of victory!
-    </p>
-    <h3>Our Pledge</h3>
-    <p>
-        We give our all,<br>
-        We stand as one.<br>
-        We'll fight with heart till the game is won.<br>
-        Through every challenge,<br>
-        We strive to be,<br>
-        The pride of our school...<br>
-        VJC!
-    </p>
-    <hr>
-    <p><a href="index.html">Index</a> | <a href=""></a> | <a href=""></a></p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="vjc-icon"></i>VJC Football</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="join.html">Join Us</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5" style="text-align: center" ;>
+        <h1>About Us!</h1>
+        <hr>
+        </hr>
+        <h3>Our Mission</h3>
+        <p>
+            The Victoria Junior College (VJC) Football team is built on passion, perseverance and teamwork!<br>
+            Representing the school in both friendly matches and national competitions, we aim to cultivate a culture of
+            mutual respect, hard work and sportsmanship.<br>
+            We strive to nurture skilled, disciplined and resilient footballers who not only excel in the game but also
+            grow
+            as leaders and team players.
+        </p>
+        <h3>Our Journey</h3>
+        <p>
+            The VJC Football team has a history of competitive success, with many notable performances in various
+            championships.<br>
+            Over the years, our teams have consistently reached the finals and obtained multiple championship titles,
+            showcasing our relentless pursuit of victory!
+        </p>
+        <h3>Our Pledge</h3>
+        <p>
+            We give our all,<br>
+            We stand as one.<br>
+            We'll fight with heart till the game is won.<br>
+            Through every challenge,<br>
+            We strive to be,<br>
+            The pride of our school...<br>
+            VJC!
+        </p>
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>VJC Football</h5>
+                    <p>Building champions on and off the field.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Contact us: vjcfootball@school.edu</p>
+                    <p id="currentDateTime"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
