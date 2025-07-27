@@ -1,5 +1,30 @@
+/* Theme for boostrap */
+/* !important is used to override default styles */
+
+:root {
+    --bs-primary: #c40c0c;
+    /* Red colour theme */
+    --bs-primary-rgb: 196, 12, 12;
+    --bs-link-color: #c40c0c;
+    --bs-link-hover-color: #a00a0a;
+}
+
 body {
+    background-color: #fff !important;
+    color: #222;
     font-family: 'Arial', sans-serif;
+}
+
+.navbar,
+footer {
+    background-color: #c40c0c !important;
+}
+
+.navbar .navbar-brand,
+.navbar-nav .nav-link,
+footer,
+footer p {
+    color: #fff !important;
 }
 
 
