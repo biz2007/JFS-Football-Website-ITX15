@@ -10,14 +10,35 @@
 }
 
 body {
-    background-color: #fff !important;
+    background-color: #fff;
     color: #222;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+}
+.navbar-nav.ms-auto {
+  position: relative;
+  display: flex;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+}
+
+.nav-item {
+    background-color: #c40c0c;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+.nav-item:hover {
+    background-color: #a00a0a;
+}
+
+.nav-link.active {
+    background-color: #222;
+    border-radius: 20px;
 }
 
 .navbar,
 footer {
-    background-color: #c40c0c !important;
+    background-color: var(--bs-primary) !important;
 }
 
 .navbar .navbar-brand,
@@ -30,7 +51,7 @@ footer p {
 
 /* Navbar customization */
 .navbar-brand {
-    font-weight: bold;
+    font-weight: bold;   
 }
 
 /* Footer customization */
