@@ -15,25 +15,27 @@ body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
 }
+
 .navbar-nav.ms-auto {
-  position: relative;
-  display: flex;
-  border-bottom: 2px solid #fff;
-  border-top: 2px solid #fff;
+    position: relative;
+    display: flex;
 }
 
 .nav-item {
     background-color: #c40c0c;
-  color: #fff;
-  transition: background-color 0.3s ease;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
 }
+
 .nav-item:hover {
     background-color: #a00a0a;
+    border-radius: 15px;
 }
 
 .nav-link.active {
     background-color: #222;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .navbar,
@@ -51,7 +53,7 @@ footer p {
 
 /* Navbar customization */
 .navbar-brand {
-    font-weight: bold;   
+    font-weight: bold;
 }
 
 /* Footer customization */
