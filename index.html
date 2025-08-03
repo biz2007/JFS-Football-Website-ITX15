@@ -12,11 +12,60 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     <style>
+        header {
+            background: #c40c0c;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+        }
 
+        .blackHex {
+            padding: 5vw 3vw;
+            background-color: #222;
+            color: #fff;
+            border-radius: 8px;
+            margin-top: 4vw;
+            clip-path: polygon(25% 5%, 75% 5%,
+                    88% 50%, 75% 95%,
+                    25% 95%, 12% 50%);
+        }
+
+        .whiteHex {
+            padding: 5vw 3vw;
+            background-color: #fff;
+            color: #222;
+            border-radius: 8px;
+            margin-top: 4vw;
+            min-height: 180px;
+            clip-path: polygon(25% 5%, 75% 5%,
+                    88% 50%, 75% 95%,
+                    25% 95%, 12% 50%);
+            transition: background-color 0.3s ease;
+        }
+
+        @media (max-width: 576px) {
+
+            .blackHex,
+            .whiteHex {
+                padding: 6vw 2vw;
+                margin-top: 6vw;
+                min-height: 120px;
+            }
+
+            .gallery img {
+                width: 100px !important;
+            }
+        }
+
+        .whiteHex:hover {
+            background-color: #dadada;
+        }
     </style>
 </head>
 
 <body>
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
@@ -49,8 +98,61 @@
 
     <!-- Content placeholder - Add your content here -->
     <div class="container mt-5">
-        <h1>Welcome to VJC Football</h1>
-        <p>This is a simple template for your Football Club website.</p>
+        <header class="blackHex">
+            <h1>⚽ Welcome to VJC Football ⚽</h1>
+            <p>Unleash Your Passion! Build Your Legacy!</p>
+        </header>
+        <a href="about.html" style="text-decoration: none;">
+            <section class="whiteHex">
+                <h2>About Us</h2>
+                <p>We’re a tight-knit community of football lovers, <br>
+                    committed to discipline, teamwork, and personal growth. 💪 <br>
+                    Whether you're a beginner or a rising star,
+                    this is where your journey begins! ✌️ </p>
+
+                <strong>Training Days:</strong> Tuesdays & Fridays, 3:30–5:30 PM <br>
+                <strong>Location:</strong> School Field
+
+            </section>
+        </a>
+        <section class="blackHex">
+            <h2>💯 What We Offer 💯</h2>
+            <ul>
+                <li>Structured skill development & fitness training</li>
+                <li>Friendly matches and league tournaments</li>
+                <li>Opportunities for leadership and CCA points</li>
+            </ul>
+        </section>
+
+        <a href="join.html" style="text-decoration: none;">
+            <section class="whiteHex">
+                <h2>Join Us</h2>
+                <p>Your VJC adventure begins here! 💛❤️ <br>
+                <div class="gallery row justify-content-center">
+                    <div class="col-4 col-sm-3 col-md-2 mb-2">
+                        <img src="images/vjc_match.png" alt="Match in action" class="img-fluid"
+                            style="clip-path: polygon(25% 5%, 75% 5%, 85% 50%, 75% 95%, 25% 95%, 15% 50%);">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 mb-2">
+                        <img src="images/team_huddle.png" alt="Team huddle" class="img-fluid"
+                            style="clip-path: polygon(25% 5%, 75% 5%, 85% 50%, 75% 95%, 25% 95%, 15% 50%);">
+                    </div>
+                    <div class="col-4 col-sm-3 col-md-2 mb-2">
+                        <img src="images/team_celebration.png" alt="Celebration" class="img-fluid"
+                            style="clip-path: polygon(25% 5%, 75% 5%, 85% 50%, 75% 95%, 25% 95%, 15% 50%);">
+                    </div>
+                </div>
+                85% 50%, 75% 95%,
+                25% 95%, 15% 50%)">
+                <img src="images/team_huddle.png" alt="Team huddle" style="width:180px; height:auto; clip-path: polygon(25% 5%, 75% 5%,
+                    85% 50%, 75% 95%,
+                    25% 95%, 15% 50%)">
+                <img src="images/team_celebration.png" alt="Celebration" style="width:180px; height:auto; clip-path: polygon(25% 5%, 75% 5%,
+                    85% 50%, 75% 95%,
+                    25% 95%, 15% 50%)">
+    </div>
+    </section>
+
     </div>
 
     <!-- Footer -->
@@ -71,9 +173,9 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="css/main.js"></script>
 </body>
+
 
 </html>
