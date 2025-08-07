@@ -131,3 +131,24 @@ header {
 .whiteHex:hover {
     background-color: #dadada;
 }
+
+/* Team cards */
+.card {
+    background: #fafafa;
+    color: #222;
+    border: none;
+    transition: background 0.4s, color 0.4s;
+}
+
+.card:hover {
+    background: #c40c0c;
+    color: #fff;
+}
+
+.card:hover .card-title,
+.card:hover p,
+.card:hover a,
+.card:hover .display-6 {
+    color: #fff;
+    transition: color 0.4s;
+}
