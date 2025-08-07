@@ -16,7 +16,9 @@
 body {
     background-color: #fff;
     color: #222;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Bebas Neue', sans-serif;
+
     line-height: 1.6;
 }
 
