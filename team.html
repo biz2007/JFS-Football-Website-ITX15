@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <link rel="icon" type="image/png" href="images/vjcicon.png">
+    <title>VJC FC - Teams</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -56,79 +57,85 @@
         <script>
             // Example data structure for players
             // Helper function to get a random headshot image
+
+            // variables
+            const randomUserApi = 'https://randomuser.me/api/';
+
             function headshot() {
-                // Example: using randomuser.me for random headshots
-                return `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 99)}.jpg`;
+                // Generate a random number for each headshot
+                const randomise = Math.floor(Math.random() * 99);
+                return `https://randomuser.me/api/portraits/men/${randomise}.jpg`;
+            }
+            function randomiseName() {
+                return fetch(randomUserApi)
+                    .then(response => response.json())
+                    .then(data => {
+                        const user = data.results[0];
+                        const fullName = `${user.name.first} ${user.name.last}`;
+                        return fullName;
+                    })
+                    .catch(() => "Unknown Player");
             }
 
-            const players = [
-                {
-                    number: 1,
-                    name: "Mohamed Salah",
-                    image: headshot(),
-                    position: "Goalkeeper",
-                    season: "2025-26",
-                    profile: "profile-alisson.html"
-                },
-                {
-                    number: 1,
-                    name: "Alisson Becker",
-                    image: headshot(),
-                    position: "Goalkeeper",
-                    season: "2025-26",
-                    profile: "profile-alisson.html"
-                },
-                {
-                    number: 10,
-                    name: "Lionel Messi",
-                    image: headshot(),
-                    position: "Forward",
-                    season: "2025-26",
-                    profile: "profile-messi.html"
-                },
-                {
-                    number: 7,
-                    name: "Florian Wirtz",
-                    image: headshot(),
-                    position: "Midfielder",
-                    season: "2025-26",
-                    profile: "profile-messi.html"
-                }
-                // Add more players as needed
-            ];
+            function randomiseNumber() {
+                // Generate a random number for each player number
+                return Math.floor(Math.random() * 99) + 1;
+            }
+            const positionsDict = {
+                "Goalkeeper": 5,
+                "Defender": 10,
+                "Midfielder": 10,
+                "Forward": 10,
+            };
 
-            // Group players by position
-            const grouped = {};
-            players.forEach(player => {
-                if (!grouped[player.position]) {
-                    grouped[player.position] = [];
+            const players = [];
+            for (const position in positionsDict) {
+                for (var i = 0; i < positionsDict[position]; i++) {
+                    players.push({
+                        number: randomiseNumber(),
+                        name: randomiseName(),
+                        image: headshot(),
+                        position: position,
+                        season: "2025-26"
+                    });
                 }
-                grouped[player.position].push(player);
-            });
+            }
 
-            // Render player cards by position
-            const playerCards = document.getElementById('playerCards');
-            playerCards.innerHTML = Object.keys(grouped).map(position => `
-                <h4 class="mb-3"><span class="badge bg-dark">${position.toUpperCase()}</span></h4>
-                <div class="row">
-                    ${grouped[position].map(player => `
-                        <div class="col-md-3 mb-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center">
-                                    <div class="display-6 fw-bold mb-2">${player.number}</div>
-                                    <img src="${player.image}" class="rounded-circle mb-3" style="width:70px;height:70px;" alt="${player.name}">
-                                    <h5 class="card-title">${player.name}</h5>
-                                    <p class="mb-1 text-uppercase text-muted small">${player.position}</p>
-                                    <p class="mb-2 text-secondary fw-bold small">Season ${player.season}</p>
-                                    <a href="${player.profile}" class="btn btn-link fw-bold text-decoration-none">
-                                        VIEW PROFILE <i class="fas fa-chevron-right"></i>
-                                    </a>
+            // Wait for all player names to resolve before rendering
+            Promise.all(players.map(async player => {
+                player.name = await player.name;
+                return player;
+            })).then(resolvedPlayers => {
+                // Group players by position
+                const grouped = {};
+                resolvedPlayers.forEach(player => {
+                    if (!grouped[player.position]) {
+                        grouped[player.position] = [];
+                    }
+                    grouped[player.position].push(player);
+                });
+
+                // Render player cards by position
+                const playerCards = document.getElementById('playerCards');
+                playerCards.innerHTML = Object.keys(grouped).map(position => `
+                    <h4 class="mb-3"><span class="badge bg-dark">${position.toUpperCase()}</span></h4>
+                    <div class="row">
+                        ${grouped[position].map(player => `
+                            <div class="col-md-3 mb-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body text-center">
+                                        <div class="display-6 fw-bold mb-2">${player.number}</div>
+                                        <img src="${player.image}" class="rounded-circle mb-3" style="width:70px;height:70px;" alt="${player.name}">
+                                        <h5 class="card-title">${player.name}</h5>
+                                        <p class="mb-1 text-uppercase text-muted small">${player.position}</p>
+                                        <p class="mb-2 text-secondary fw-bold small">Season ${player.season}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `).join('');
+                        `).join('')}
+                    </div>
+                `).join('');
+            });
         </script>
 
 
@@ -151,8 +158,8 @@
         </footer>
 
         <!-- Bootstrap JS Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+        <!-- Custom JavaScript -->
+        <!-- <script src="css/main.js"></script> -->
         <!-- Custom JavaScript -->
         <script src="css/main.js"></script>
 </body>
