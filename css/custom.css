@@ -1,4 +1,4 @@
-/* Theme for boostrap */
+/* Theme for bootstrap */
 /* !important is used to override default styles */
 
 :root {
@@ -16,9 +16,7 @@
 body {
     background-color: #fff;
     color: #222;
-    /* font-family: 'Roboto', sans-serif; */
     font-family: 'Bebas Neue', sans-serif;
-
     line-height: 1.6;
 }
 
@@ -54,8 +52,8 @@ footer {
 footer,
 footer p {
     color: #fff !important;
+    font: 400 16px 'Lato', sans-serif;
 }
-
 
 /* Navbar customization */
 .navbar-brand {
@@ -90,6 +88,7 @@ footer h5 {
     text-align: center;
 }
 
+/* === Gallery Styles === */
 .gallery img {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -99,3 +98,36 @@ footer h5 {
     filter: brightness(1.1);
 }
 
+header {
+    background: #c40c0c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.blackHex {
+    padding: 21px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.whiteHex {
+    padding: 21px;
+    background-color: #fff;
+    color: #222;
+    border-radius: 8px;
+    margin-top: 20px;
+    height: 222px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    font-family: 'Lato', sans-serif;
+}
+
+.whiteHex:hover {
+    background-color: #dadada;
+}
