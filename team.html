@@ -47,8 +47,11 @@
         </div>
     </nav>
 
-    <!-- Content placeholder - Add your content here -->
     <!-- Team Section -->
+    <div class="text-center mt-4">
+        <h1>Our Players</h1>
+        <hr>
+    </div>
     <div class="container mt-5">
         <div class="row" id="playerCards">
 
@@ -81,10 +84,10 @@
                 return Math.floor(Math.random() * 99) + 1;
             }
             const positionsDict = {
-                "Goalkeeper": 5,
-                "Defender": 10,
-                "Midfielder": 10,
-                "Forward": 10,
+                "Goalkeeper": 3,
+                "Defender": 5,
+                "Midfielder": 5,
+                "Forward": 5,
             };
 
             const players = [];
@@ -117,7 +120,7 @@
                 // Render player cards by position
                 const playerCards = document.getElementById('playerCards');
                 playerCards.innerHTML = Object.keys(grouped).map(position => `
-                    <h4 class="mb-3"><span class="badge bg-dark">${position.toUpperCase()}</span></h4>
+                    <h4 class="mb-3"><span class="badge bg-dark">${position.toUpperCase() + "S"}</span></h4>
                     <div class="row">
                         ${grouped[position].map(player => `
                             <div class="col-md-3 mb-4">
