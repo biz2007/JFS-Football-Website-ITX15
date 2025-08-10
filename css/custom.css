@@ -155,7 +155,7 @@ header {
 
 .vid {
     display: inline-block;
-    box-shadow: 0 0 30px 15px #222;
+    box-shadow: 0 0 30px 15px #c40c0c;
     border-radius: 10px;
 }
 
@@ -164,3 +164,10 @@ iframe {
     border-radius: 10px;
     display: block;
 }
+
+#timer {
+    font-size: 2.5em; 
+    font-weight: bold; 
+    color: #c40c0c; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
+  }

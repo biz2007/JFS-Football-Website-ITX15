@@ -50,15 +50,56 @@
 
     <!-- Content placeholder - Add your content here -->
     <div class="container mt-5">
-        <h1>Events</h1>
-        <hr>
-        </hr>
-        <div class="vid">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/mUWYf-OgMUs"
-            title="NSG2024 - Victoria Junior College vs Hwa Chong Institution" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+        <h1 class="blackHex">Events</h1> <br>
+        <p>
+            <ul><h3>Upcoming Match Info</h3>
+
+            <li>Opponent: Anderson Serangoon JC</li> 
+
+            <li>Date: 20 August 2025 (Wednesday)</li> 
+
+            <li>Kickoff: 3:00 PM (SGT)</li> 
+
+            <li>Venue: Bishan Stadium</li> 
+
+            <li>Competition: National School Games – A Division Boys’ Football</li></ul>
+        </p> <br>
+        <div>
+            <h2 class="blackHex">Next Match Countdown ⏱️</h2> <br>
+            <p id="timer">
+                <script>
+                    // set the date and time of the next match
+                    const matchDate = new Date("Aug 20, 2025 15:00:00").getTime();
+
+                    const countdown = setInterval(() => {
+                        const now = new Date().getTime();
+                        const time = matchDate - now;
+
+                        const days = Math.floor(time / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((time % (1000 * 60)) / 1000);
+
+                        document.getElementById("timer").innerHTML =
+                            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                        if (time < 0) {
+                            clearInterval(countdown);
+                            document.getElementById("timer").innerHTML = "MATCH IN PROGRESS ⚽";
+                        }
+                    }, 1000);
+                </script>
+
+            </p>
+        </div> <br>
+        <div class="blackHex">
+            <div class="vid">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/mUWYf-OgMUs"
+                    title="NSG2024 - Victoria Junior College vs Hwa Chong Institution" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
 
