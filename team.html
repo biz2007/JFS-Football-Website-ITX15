@@ -56,11 +56,12 @@
 
         </div>
         <script>
-            // Example data structure for players
-            // Helper function to get a random headshot image
+            // data structure for players
+            // helper function to get a random headshot image
 
             // variables
             const randomUserApi = 'https://randomuser.me/api/';
+            const usedNumbers = new Set();
 
             function headshot() {
                 // Generate a random number for each headshot
@@ -80,7 +81,12 @@
 
             function randomiseNumber() {
                 // Generate a random number for each player number
-                return Math.floor(Math.random() * 99) + 1;
+                let num;
+                do {
+                    num = Math.floor(Math.random() * 99) + 1;
+                } while (usedNumbers.has(num)); // Keep generating until unique
+                usedNumbers.add(num);
+                return num;
             }
             const positionsDict = {
                 "Goalkeeper": 3,
@@ -140,7 +146,7 @@
                 `).join('');
             });
         </script>
-        
+
         <!-- Footer -->
         <footer class="bg-dark text-white py-4 mt-5">
             <div class="container">
